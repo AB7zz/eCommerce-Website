@@ -1,0 +1,138 @@
+body{
+	margin-top: 100px;
+}
+@media (min-width: 768px){
+	body{
+		margin-top: 50px;
+	}
+}
+#wrapper{
+	padding-left: 0;
+}
+#page-wrapper{
+	width: 100%;
+	padding: 10px;
+	background-color: #F9F9F9;
+}
+@media (min-width: 768px){
+	#wrapper{
+		padding-left: 0;
+	}
+	#page-wrapper{
+		padding: 10px;
+	}
+}
+.top-nav{
+	padding: 0 15px;
+}
+.top-nav>li{
+	display: inline-block;
+	float: left;
+}
+.top-nav>li>a{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	line-height: 20px;
+}
+.top-nav>li>a:hover
+.top-nav>li>a:focus{
+	color:black;
+}
+@media (min-width: 768px){
+	.sidebar-nav{
+		position: fixed;
+		top: 60px;
+		bottom: 0;
+		left: 0;
+		width: 225px;
+		border-radius: 0;
+      	overflow-y: auto;
+		background-color: #222;
+		bottom: 0;
+		overflow-x: hidden;
+		padding-bottom: 20px;
+	}
+	.sidebar-nav>li>a{
+		width: 255px;
+	}
+	.sidebar-nav li a:hover
+	.sidebar-nav li a:focus{
+		outline: none;
+		background-color: #000;
+	}
+}
+.sidebar-nav>li>ul{
+	padding: 0;
+}
+.sidebar-nav>li>ul>li>a{
+	display: block;
+	padding: 10px 15px 10px 38px;
+	text-decoration: none;
+	color: #999;
+}
+.sidebar-nav>li>ul>li>a:hover{
+	color: #fff;
+}
+
+
+/*Dashboard stuff*/
+.huge{
+	font-size: 40px;
+	line-height: normal;
+}
+
+.panel-green > .panel-heading{
+	color: #fff;
+	background-color: #5cd85c;
+}
+
+.panel-green > a{
+	color: #5cd85c;
+}
+
+.panel-red > .panel-heading{
+	color: #fff;
+	background-color: #d9534f;
+}
+
+.panel-red > a{
+	color: #d9534f;
+}
+
+.panel-yellow > .panel-heading {
+	color: #fff;
+	background-color: #f0ad4e;
+}
+
+.panel-yellow > a{
+	color: #f0ad4e;
+}
+/*Dashboard stuff end*/
+
+/*Insert Product style*/
+.box{
+	background-color: #fff;
+	border: solid 1px #e6e6e6;
+	padding: 20px;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+.breadcrumb {
+	padding: 8px 15px;
+	margin-bottom: 20px;
+	background-color: white;
+	border-radius: 0;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.breadcrumb >li + li:before {
+	content: " >\00a0";
+	color: #cccccc;
+}
+
+@media (max-width: 991px) {
+	.breadcrumb {
+		padding: 8px 0;
+		text-align: center; 
+	}
+}
+/*Insert Product style End*/

@@ -1,0 +1,373 @@
+<?php include 'db/db.php'; ?>
+<?php include ("functions/functions.php"); ?>
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Buy Met Sell</title>
+	<?php include 'styles/link.php'; ?>
+	<link rel="stylesheet" type="text/css" href="styles/style.css?v=<?php echo time(); ?>">
+</head>
+<body>
+	<div id="top"><!--Top Bar Start-->
+    <div class="row container"><!--Container Start-->
+      <div class="col-md-6 offer"><!--col-md-6 offer Start-->
+        <a href="index.php" class="navbar-brand">E-commerce made by Abhinav CV</a>
+        <form style="display:inline-block;" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div><!--col-md-6 offer End-->
+      <div class="col-md-6 offer">
+        <ul class="menu">
+          <li>
+            <a href="register.php"> Register</a>
+          </li>
+          <li>
+            <?php
+            if(!isset($_SESSION['customer_email'])){
+              echo "<a href='checkout.php'>My Account</a>";
+            }else{
+              echo "<a href='myaccount.php?my_order'>My Account</a>";
+            }
+            ?>
+          </li>
+          <li>
+            <a href="cart.php"> Go to Cart</a>
+          </li>
+          <li>
+            <?php 
+            if(!isset($_SESSION['customer_email']))
+            {
+              echo "<a href='checkout.php'>Log in</a>"; 
+            }
+            else
+            {
+                echo "<a href='logout.php'>Log out</a>";
+            }
+            ?>
+          </li>
+        </ul>
+      </div>
+    </div><!--Container End-->
+  </div><!--Top Bar End-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand btn btn-success btn-sm" href="register.php">
+        <?php
+            if(!isset($_SESSION['customer_email'])){
+              echo "Log in";
+            }else{
+              echo "Welcome: " . $_SESSION['customer_email'] . "";
+            }
+          ?>
+        </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="aboutus.php">About Us</a>
+            </li>
+            <li class="nav-item  dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Products
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="medicalprod.php">Medical Products</a>
+                  <a class="dropdown-item" href="rice.php">Rice</a>
+                  <a class="dropdown-item" href="buildprod.php">Properties</a>
+              </div>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="aboutus.php">Services</a>
+          </li>
+          <li class="nav-item ">
+              <a class="nav-link" href="contactus.php">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <?php
+            if(!isset($_SESSION['customer_email'])){
+              echo "<a class='nav-link' href='checkout.php'>My Account</a>";
+            }else{
+              echo "<a class='nav-link' href='myaccount.php?my_order'>My Account</a>";
+            }
+            ?>
+          </li>
+          <li class="nav-item ">
+              <a class="nav-link" href="cart.php">My Cart</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <a id="carttt" href="cart.php" class="my-2 my-sm-0 form-control mr-sm-2 btn navbar-btn btn-primary right"><i class="fa fa-shopping-cart"></i> <?php item(); ?> items in Cart</a>
+        </form>
+      </div>
+  </nav>
+	<div id="content">
+    	<div class="container">
+      		<div class="col-md-12">
+        		<ul class="breadcrumb">
+          			<li><a href="index.php">Home</a></li>
+          			<li>Medical Products</li>
+        		</ul>
+          </div>
+          <div class="col-md-3">
+            <?php include ("sidebar.php"); ?>
+          </div>
+      </div>
+  </div>
+  <?php include 'footer.php'; ?>
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Buy Met Sell</title>
+  <?php include 'styles/link.php'; ?>
+  <link rel="stylesheet" type="text/css" href="styles/style.css?v=<?php echo time(); ?>">
+</head>
+<body>
+  <div id="top"><!--Top Bar Start-->
+    <div class="row container"><!--Container Start-->
+      <div class="col-md-6 offer"><!--col-md-6 offer Start-->
+        <a class="navbar-brand">Buy Met Sell</a>
+        <form style="display:inline-block;" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div><!--col-md-6 offer End-->
+      <div class="col-md-6 offer">
+        <ul class="menu">
+          <li>
+            <a href="register.php"> Register</a>
+          </li>
+          <li>
+            <a href="myaccount.php"> My Account</a>
+          </li>
+          <li>
+            <a href="cart.php"> Go to Cart</a>
+          </li>
+          <li>
+            <a href="login.php"> Log in</a>
+          </li>
+        </ul>
+      </div>
+    </div><!--Container End-->
+  </div><!--Top Bar End-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand btn btn-success btn-sm" href="register.php">
+          Log In
+        </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="aboutus.php">About Us</a>
+            </li>
+            <li class="nav-item  dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Products
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="medicalprod.php">Medical Products</a>
+                  <a class="dropdown-item" href="rice.php">Rice</a>
+                  <a class="dropdown-item" href="properties.php">Properties</a>
+              </div>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="aboutus.php">Services</a>
+          </li>
+          <li class="nav-item ">
+              <a class="nav-link" href="contactus.php">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="myaccount.php" class="nav-link">My Account</a>
+          </li>
+          <li class="nav-item ">
+              <a class="nav-link" href="cart.php">My Cart</a>
+            </li>
+        </ul>
+      </div>
+  </nav>
+  <div id="content">
+    <div class="container">
+      <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li><a href="index.php">Home</a></li>
+          <li><a href="medicalprod.php">Medical Products</a></li>
+          <li>3ply Disposable Mask</li>
+        </ul>
+      </div>
+      <div class="col-md-12">
+        <div class="row" id="productmain">
+          <div class="col-sm-6">
+            <div id="mainimage">
+              <div id="carouselExampleIndicators" class="ml-4 mt-4 carousel carousel-2 slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner carousel-inner-2">
+                  <div class="carousel-item carousel-item-2 active">
+                    <center>
+                      <img class="d-block w-100" src="images/3ply.jpg" alt="Rice">
+                    </center>
+                  </div>
+                  <div class="carousel-item carousel-item-2">
+                    <center>
+                      <img class="d-block w-100" src="images/1860.jpg" alt="Rice">
+                    </center>
+                  </div>
+                  <div class="carousel-item carousel-item-2">
+                    <center>
+                      <img class="d-block w-100" src="images/3ply.jpg" alt="Rice">
+                    </center>
+                  </div>
+                  <div class="carousel-item carousel-item-2">
+                    <center>
+                      <img class="d-block w-100" src="images/3ply.jpg" alt="Rice">
+                    </center>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div style="width: 50rem;" class="box">
+                <h1 class="text-center">3ply Disposable Mask</h1>
+                <form action="details.php" method="post" class="form-horizontal">
+                  <div class="form-group">
+                    <label class="col-md-5 control">Product Quantity</label>
+                    <div class="col-md-7">
+                      <input style="height: 30px; width: 200px;" type="text" placeholder="Enter your required quantity" name="quantity">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-5 control">Product Color</label>
+                    <div class="col-md-7">
+                      <select style="height: 30px; width: 200px;" name="product_qty" class="form-control">
+                        <option>Blue</option>
+                        <option>Black</option>
+                      </select>
+                    </div>
+                  </div>
+                  <p><b>Price per box:</b> 4.35 AED</p>
+                  <p><b>Total Price:</b> 10000000 AED</p>
+                  <p class="text-center buttons">
+                    <button class="btn-success btn-outline-success btn-sm">
+                      Submit Proposal
+                    </button>
+                  </p>
+                  <p c lass="price">4.25 Dhs per box</p>
+                  <p class="text-center buttons">
+                    <button class="btn btn-primary" type="submit">
+                      <i class="fa fa-shopping-cart"></i>Add to cart
+                    </button>
+                  </p>
+                </form>
+              </div>
+              <div class="col-xs-4">
+                <a href="#" class="thumb">
+                  <img style="background-color: white; height: 150px; width: 150px;" src="images/3ply.jpg">
+                </a>
+              </div>
+              <div class="col-xs-4">
+                <a href="#" class="thumb">
+                  <img style="background-color: white; height: 150px; width: 150px;" src="images/3ply.jpg">
+                </a>
+              </div>
+              <div class="col-xs-4">
+                <a href="#" class="thumb">
+                  <img style="background-color: white; height: 150px; width: 150px;" src="images/3ply.jpg">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <h3 class="box text-center">You may also like these products</h3>
+      </div>
+        <div class="col-md-4 col-sm-6">
+              <div class="product box">
+                <a href="details.php">
+                  <img style="height: 250px; width: 250px;" class="img-responsive " src="images/kn95.jpg">
+                </a>
+                <div class="text">
+                  <h3>
+                    <a href="details.php">KN95 Mask</a>
+                  </h3>
+                  <p class="price">100 AED</p>
+                  <p class="buttons">
+                    <a href="details.php" class="btn btn-default">View Details</a>
+                    <a href="details" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+        <div class="col-md-4 col-sm-6">
+              <div class="product  box">
+                <a href="details.php">
+                  <img style="height: 250px; width: 250px;" class="img-responsive " src="images/1860.jpg">
+                </a>
+                <div class="text">
+                  <h3>
+                    <a href="details.php">3M N95 1860</a>
+                  </h3>
+                  <p class="price">260 AED</p>
+                  <p class="buttons">
+                    <a href="details.php" class="btn btn-default">View Details</a>
+                    <a href="details" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+        <div class="col-md-4 col-sm-6">
+              <div class="product  box">
+                <a href="details.php">
+                  <img style="height: 250px; width: 250px;" class="img-responsive " src="images/8210.jpg">
+                </a>
+                <div class="text">
+                  <h3>
+                    <a href="details.php">3M N95 8210</a>
+                  </h3>
+                  <p class="price">300 AED</p>
+                  <p class="buttons">
+                    <a href="details.php" class="btn btn-default">View Details</a>
+                    <a href="details" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+    </div>
+  </div>
+  <?php include 'footer.php'; ?>
+</body>
+</html>

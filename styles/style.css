@@ -1,0 +1,415 @@
+<style type="text/css">
+		body nav{
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333333;
+	background-color: #f0f0f0 !important;
+}
+
+body {
+	background-color: #f0f0f0;
+}
+
+.nav-link{
+	color: black !important;
+}
+.active{
+	background-color: lightgrey;
+}
+
+.box{
+	background-color: #fff;
+	border: solid 1px #e6e6e6;
+	padding: 20px;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.buildbox{
+	background-color: #fff;
+	border: solid 1px #e6e6e6;
+	padding: 20px;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+#top {
+	background-color: black;
+	padding: 10px 0;
+}
+
+.navbar-brand {
+	color: white !important;
+}
+
+#top .offer {
+	color: #fff;
+}
+
+#top .offer .btn {
+	text-transform: uppercase;
+}
+
+@media(max-width: 991px) {
+	#top .offer {
+		margin-bottom: 10px;
+	}
+}
+
+@media(max-width: 991px) {
+	#top {
+		font-size: 12px;
+		text-align: center;
+	}
+}
+
+#top a {
+	color: #fff;
+}
+
+#top ul.menu {
+	padding-top: 5px;
+	margin: 0;
+	text-align: right;
+	font-size: 12px;
+	list-style: none;
+}
+
+@media(max-width: 991px) {
+	#top ul.menu {
+		text-align: center;
+	}
+}
+
+#top ul.menu > li {
+	display: inline-block;
+}
+
+#top ul.menu > li a {
+	color: #eeeeee;
+}
+
+#top ul.menu > li + li:before {
+	content: "|\00a0";
+	padding: 0 5px;
+	color: #f7f7f7;
+}
+
+.nav-link{
+	font-size: 17px;
+}
+
+nav .navbar-nav li:hover{
+	background-color: lightgrey;
+}
+
+//Carousel for index START
+.carousel-item-index img {
+	height: 475px !important;
+	width: 1250px !important;
+}
+.carousel-item-index{
+	height: 475px !important;
+	width: 1250px !important;
+}
+.carousel-inner-index {
+	height: 475px !important;
+	width: 1250px !important;
+}
+//Carousel for index END
+
+//Carousel for Properties START
+.carousel-item-test img{
+	height: 142px !important;
+	width: 234px !important;
+}
+.carousel-item-test{
+	height: 142px !important;
+	width: 234px !important;
+}
+
+.carousel-inner-test{
+    height: 142px !important;
+    width: 234px !important;
+}
+//Carousel for Properties END
+
+//Carousel for Details START
+.carousel-item-detail img{
+	height: 355px !important;
+	width: 234px !important;
+}
+.carousel-item-detail{
+	height: 355px !important;
+	width: 234px !important;
+}
+
+.carousel-inner-detail{
+    height: 355px !important;
+    width: 234px !important;
+}
+//Carousel for Details END
+
+//Carousel for Products START
+.carousel-item-product{
+	height: 400px;
+	width: 400px;
+}
+
+.carousel-inner-product{
+	height: 400px;
+	width: 400px;
+}
+//Carousel for Products END
+
+//Carousel for Medicalprod START
+.carousel-item-medprod{
+	height: 250px;
+	width: 150px;
+}
+.carousel-inner-medprod{
+	height: 250px;
+	width: 150px;
+}
+//Carousel for Medicalprod END
+@media (max-width: 991px) {
+	.carousel-inner-index {
+	height: 250px !important;
+	width: 400px !important;
+	}
+	.body{
+		overflow-y: hidden;
+	}
+
+	.carousel-item-index img {
+		height: 250px !important;
+		width: 400px !important;
+	}
+	.carousel-item-index{
+		height: 250px !important;
+		width: 400px !important;
+	}
+	.carousel-item-detail img{
+	height: 555px !important;
+	width: 234px !important;
+	}
+	.carousel-item-detail{
+		height: 555px !important;
+		width: 234px !important;
+	}
+
+	.carousel-inner-detail{
+	    height: 555px !important;
+	    width: 234px !important;
+	}
+}
+
+.font-1 {
+	font-family: 'Merriweather Sans', sans-serif !important;
+}
+
+/*Footer Style*/
+#footer {
+	background-color: lightgrey;
+}
+
+#footer ul {
+	padding-left: 0;
+	list-style: none;
+}
+
+#footer ul a{
+	color: #999999;
+	padding: 20px 0;
+}
+
+#footer .social {
+	text-align: left;
+}
+
+#footer .social a{
+	margin: 0 10px 0 0;
+	color: #fff;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	line-height: 30px;
+	font-size: 15px;
+	text-align: center;
+	transform: all 0.2s ease-out;
+	vertical-align: bottom;
+	background-color: #555555;
+}
+.input-group-btn .btn {
+	background-color: white;
+}
+
+.input-group-btn .btn:hover {
+	background-color: black;
+	color: white;
+}
+/*Footer Style End */
+
+/*Breadcrumb section Start*/
+.breadcrumb {
+	padding: 8px 15px;
+	margin-bottom: 20px;
+	background-color: #ffffff;
+	border-radius: 0;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.breadcrumb >li + li:before {
+	content: " >\00a0";
+	color: #cccccc;
+}
+
+@media (max-width: 991px) {
+	.breadcrumb {
+		padding: 8px 0;
+		text-align: center; 
+	}
+}
+/*Breadcrumb section End*/
+
+/*Sidebar Styling Start*/
+#content .panel.sidebar-menu {
+	box-sizing: border-box;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+#content .panel.sidebar-menu ul.nav.category-menu{
+	margin-bottom: 20px;
+}
+
+#content .panel.sidebar-menu ul.nav.category-menu li a{
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#content .panel.sidebar-menu h3{
+	padding: 5px 0;
+	margin: 0;
+}
+/*Sidebar Styling End*/
+
+/*Shop Product Style Start*/
+@media (max-width: 768px){
+	.center-responsive {
+		width: 70%;
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 550px){
+	.center-responsive {
+		width: 95%;
+		margin: 0 auto;
+	}
+}
+
+/*Shop Product Style End*/
+
+
+
+/*Details Start*/
+#content #productmain {
+	margin-bottom: 30px;
+}
+
+#content #productmain .price {
+	font-size: 30px;
+	font-weight: 300;
+	text-align: center;
+	margin-top: 40px;
+}
+
+#content #mainimage{
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+#content .thumb{
+	display: block;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+	border: solid 2px transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Cart styling Start*/
+#content #cart .table tbody tr td input{
+	width: 40px;
+	text-align: right;
+
+}
+
+#content #cart .table tbody tr td{
+	vertical-align: middle;
+}
+
+#content #cart .table tfoot {
+	font-size: 18px;
+}
+
+.box .box-footer {
+	background: #f7f7f7;
+	margin: 30px -20px -20px;
+	padding: 20px;
+	border-top: solid 1px #eeeeee;
+}
+
+.box .box-footer:before,
+.box .box-footer:after{
+	content: " ";
+	display: table;
+}
+
+.box .box-footer:after{
+	clear: both;
+}
+
+.box .box-header{
+	background: #f7f7f7;
+	margin: -20px -20px 20px;
+	padding: 20px;
+	border-bottom: solid 1px #eeeeee;
+}
+
+#content #order-summary table{
+	margin-top: 20px;
+}
+
+#content #order-summary table td{
+	color: #999999;
+}
+
+#content #order-summary table tr .total td,
+#content#order-summary table tr .total th{
+	font-size: 18px;
+	color: #555555;
+	font-weight: 700;
+}
+/*Cart styling End*/
+
+/*My Account Panel Start*/
+
+/*My Account Panel End*/
+
+
+
+
+
+
